@@ -1,0 +1,60 @@
+[package]
+name = "smtc2web-dev"
+version = "0.1.0"
+edition = "2024"
+description = "Command-line web preview server for smtc2web themes"
+license = "MIT"
+
+[dependencies]
+base64 = "0.22"
+clap = { version = "4", features = ["derive"] }
+dirs = "5.0"
+futures-util = "0.3"
+http-body-util = "0.1"
+hyper = { version = "1", features = ["http1", "server", "client"] }
+hyper-util = { version = "0.1", features = ["tokio"] }
+mime_guess = "2.0"
+notify = "6"
+open = "5.0"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tokio = { version = "1", features = [
+    "rt-multi-thread",
+    "macros",
+    "signal",
+    "process",
+    "net",
+    "fs",
+    "io-util",
+    "time",
+    "sync",
+] }
+tokio-stream = { version = "0.1", features = ["sync", "time"] }
+toml = "0.8"
+
+[target.'cfg(target_os = "windows")'.dependencies.windows]
+features = [
+  "Foundation",
+  "Foundation_Collections",
+  "Media_Control",
+  "Storage",
+  "Storage_Streams",
+  "Management_Deployment",
+  "ApplicationModel",
+  "System",
+  "Win32_System_WinRT",
+  "Win32_UI_WindowsAndMessaging",
+  "Win32_UI_Shell",
+  "Win32_System_Console",
+  "Win32_System_Threading",
+  "Win32_System_Diagnostics_ToolHelp",
+  "Win32_System_ProcessStatus",
+  "Win32_Foundation",
+  "Win32_Globalization",
+  "Win32_Security",
+  "Win32_System_Registry",
+]
+version = "0.58"
+
+[target.'cfg(target_os = "linux")'.dependencies]
+mpris = "2.0"

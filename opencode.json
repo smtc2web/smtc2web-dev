@@ -1,0 +1,27 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "default_agent": "Full-Auto",
+  "agent": {
+    "Full-Auto": {
+      "description": "全自动模式，所有权限放行",
+      "mode": "primary",
+      "tools": {
+        "write": true,
+        "edit": true,
+        "bash": true,
+        "read": true,
+        "glob": true,
+        "grep": true,
+        "list": true,
+        "task": true,
+        "skill": true,
+        "webfetch": true,
+        "websearch": true,
+        "codesearch": true
+      },
+      "permission": {
+        "*": "allow"
+      }
+    }
+  }
+}
