@@ -160,6 +160,7 @@ fn media_worker(state: Shared, process_filter: String) {
 
     #[cfg(target_os = "linux")]
     {
+        use media::MediaSession;
         let session = match media::PlatformSession::new(&process_filter) {
             Ok(s) => s,
             Err(e) => {
