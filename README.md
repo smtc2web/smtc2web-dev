@@ -7,7 +7,7 @@
 ## 安装
 
 ```bash
-cargo install --git https://github.com/smtc2web/smtcweb-dev.git
+cargo install --git https://github.com/smtc2web/smtc2web-dev.git
 ```
 
 ## 帮助
